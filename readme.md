@@ -37,3 +37,9 @@
 git push时提示 'your current branch is behind' 要求拉取远程  
 git pull时提示 'fatal: refusing to merge unrelated histories'  
 解决方法：git pull --allow-unrelated-histories origin master 后再次push
+## 在dev上开发
+1. 在master分支上push完后，`git checkout -b dev` 产生一个`dev`分支并切换到此分支上，此分支代码和master一样
+2. `git push origin dev`使得远程也有`dev`分支
+3. 克隆项目时，克隆后branch只有`master`分支
+4. `git checkout -b dev origin/dev` 根据远程dev生成本地dev分支
+5. `git pull origin dev`拉取最新提交的dev分支 git pull = git fetch + git mrege
